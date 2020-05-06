@@ -8,9 +8,10 @@ document.getElementById("buscarBtn").addEventListener("click", (e) => {
   const categoriasSelect = categories.options[categories.selectedIndex].value;
   // search no empty
   if (text !== "") {
-    console.log("buscando");
+    eventBrite.getEvents(text, categoriasSelect).then((data) => {
+      console.log(data);
+    });
   } else {
-    //mesage error
     ui.showMessage(
       "Debes escribir que quieres buscar",
       "alert alert-danger  text-center mt-4"
