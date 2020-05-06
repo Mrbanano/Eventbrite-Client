@@ -21,4 +21,18 @@ class Ui {
       });
     });
   }
+  showMessage(message, classes) {
+    const div = document.createElement("div");
+    div.classList = classes;
+    div.appendChild(document.createTextNode(message));
+    const divSearch = document.querySelector("#buscador");
+    divSearch.appendChild(div);
+    setTimeout(() => {
+      this.clearMessage();
+    }, 3000);
+  }
+  clearMessage() {
+    const alert = document.querySelector(".alert");
+    alert ? alert.remove() : "";
+  }
 }

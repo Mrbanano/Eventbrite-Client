@@ -10,5 +10,10 @@ document.getElementById("buscarBtn").addEventListener("click", (e) => {
   if (text !== "") {
     console.log("buscando");
   } else {
+    //mesage error
+    ui.showMessage(
+      "Debes escribir que quieres buscar",
+      "alert alert-danger  text-center mt-4"
+    );
   }
 });
